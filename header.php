@@ -27,6 +27,8 @@
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
 
+		<link rel="stylesheet" href="style2.css">
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -86,7 +88,16 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-
+						<div class="row">
+						<form>
+						<div class="col-md-3">
+							<div class="">
+							<div class="input-box button">
+                				<input type="Submit" value="Sign In" style="width:100px; height:35px; margin-top:20px; font-size:15px;">
+            				</div>
+							</div>
+						</div>
+						</form>
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
@@ -102,7 +113,7 @@
 
 								<!-- Cart -->
 								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
 										<div class="qty">3</div>
@@ -176,6 +187,13 @@
 						<li><a href="laptop.php">Laptops</a></li>
 						<li><a href="phone.php">Smartphones</a></li>
 						<li><a href="led.php">LED</a></li>
+						<li><div class="dropdown">
+						<li><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+									</a>
+							</li>
+		                </div>
 					</ul>
 					<!-- /NAV -->
 				</div>
