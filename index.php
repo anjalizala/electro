@@ -42,7 +42,7 @@
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="./img/iphone.jpg" alt="">
+						 	<img src="./img/iphone.jpg" alt="">
 							</div>
 							<div class="shop-body">
 								<h3>Smartphone<br>Collection</h3>

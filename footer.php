@@ -64,9 +64,9 @@
 								<h3 class="footer-title">Categories</h3>
 								<ul class="footer-links">
 									<!--<li><a href="#">Hot deals</a></li>-->
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a href="#">LED</a></li>
+									<li><a href="laptop.php">Laptops</a></li>
+									<li><a href="phone.php">Smartphones</a></li>
+									<li><a href="led.php">LED</a></li>
 								
 								</ul>
 							</div>

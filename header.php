@@ -172,7 +172,7 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="#">Categories</a></li>
+						<li><a href="categories.php">Categories</a></li>
 						<li><a href="laptop.php">Laptops</a></li>
 						<li><a href="phone.php">Smartphones</a></li>
 						<li><a href="led.php">LED</a></li>
