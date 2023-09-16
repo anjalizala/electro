@@ -13,7 +13,7 @@
     <center>
     <div class="wrapper">
         <h2>Registration</h2>
-        <form action="<?php $_SERVER["PHP_SELF"]?>" align="center" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" align="center" method="POST">
         <table>
             <div class="input-box">
                 <input type="text"  name="name" placeholder="Full Name" required>
@@ -22,7 +22,7 @@
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="phone" name="phone" placeholder="Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                <input type="text" name="phone" placeholder="Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
             </div>
             <div class="input-box">
                 <input type="text" name="address" placeholder="Address Line 1" required>
@@ -54,10 +54,10 @@ if(isset($_POST['submit']))
 {
     $name=$_POST['name'];
     $email=$_POST['email'];
-    $moblieno=$_POST['phone'];
+    $phone=$_POST['phone'];
     $address=$_POST['address'];
     $password=$_POST['password'];
-    $sql="INSERT INTO registration(name,email,mobileno,address,password) VALUES('$name','$email',$moblieno,'$address','$password')";
+    $sql="INSERT INTO registration(name,email,mobileno,address,password) VALUES('$name','$email',$phone,'$address','$password')";
     $q=(mysqli_query($conn,$sql));
     if(!$q)
         {
@@ -65,7 +65,9 @@ if(isset($_POST['submit']))
         }
     else
     {
-        echo '<script>Window.location="login.php"</script>';
+        echo "<script>
+         window.location.href='login.php';
+        </script>";
     }
         mysqli_close($conn);
 

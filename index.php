@@ -91,9 +91,9 @@
 							<h3 class="title">New Products</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab1">LED</a></li>
+									<li class="active"><a href="laptop.php">Laptops</a></li>
+									<li><a  href="phone.php">Smartphones</a></li>
+									<li><a  href="led.php">LED</a></li>
 								</ul>
 							</div>
 						</div>
@@ -324,9 +324,9 @@
 							<h3 class="title">Top selling</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab2">LED</a></li>
+									<li class="active"><a href="laptop.php">Laptops</a></li>
+									<li><a  href="phone.php">Smartphones</a></li>
+									<li><a  href="led.php">LED</a></li>
 									
 								</ul>
 							</div>
