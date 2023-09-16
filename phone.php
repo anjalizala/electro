@@ -145,7 +145,7 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/asu.jpg" alt="">
+												<img src="./img/ip.jpg" alt="">
 												<div class="product-label">
 												<span class="new">NEW</span>
 											</div>
@@ -177,7 +177,7 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/sa.jpg" alt="">
+												<img src="./img/phone.jpg" alt="">
 												<div class="product-label">
 													<span class="new">NEW</span>
 												</div>

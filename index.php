@@ -27,12 +27,14 @@
 					<!-- shop -->
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
+						<a href="laptop.php">
 							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
+							<img src="./img/shop01.png" alt=""></img>
 							</div>
+						</a>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="laptop.php"><h3>Laptop<br>Collection</h3></a>
+								<a href="laptop.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -41,12 +43,14 @@
 					<!-- shop -->
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
+						<a href="phone.php">
 							<div class="shop-img">
 						 	<img src="./img/iphone.jpg" alt="">
 							</div>
+						</a>
 							<div class="shop-body">
-								<h3>Smartphone<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="phone.php"><h3>Smartphone<br>Collection</h3></a>
+								<a href="phone.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -55,12 +59,14 @@
 					<!-- shop -->
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
+						<a href="led.php">
 							<div class="shop-img">
 								<img src="./img/led.jpg" alt="">
 							</div>
+						</a>
 							<div class="shop-body">
-								<h3>LED<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="led.php"><h3>LED<br>Collection</h3></a>
+								<a href="led.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
