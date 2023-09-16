@@ -73,7 +73,7 @@
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<div class="header-search">
 								<form>
 									<select class="input-select">
@@ -89,17 +89,14 @@
 						</div>
 						<!-- /SEARCH BAR -->
 						<div class="row">
-						<form>
-						<div class="col-md-3">
-							<div class="">
+							<div class="col-md-2">
+					
 							<div class="input-box button">
                 				<input type="Submit" value="Sign In" style="width:100px; height:35px; margin-top:20px; font-size:15px;">
             				</div>
-							</div>
 						</div>
-						</form>
 						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
+						<div class="col-md-2">
 							<div class="header-ctn">
 								<!-- Wishlist -->
 								<!--<div>

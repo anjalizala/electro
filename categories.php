@@ -19,13 +19,15 @@
 									<div class="products-slick" data-nav="#slick-nav-1">
 										<!-- product -->
 										<div class="product">
+										<a href="phone.php">
 											<div class="product-img">
-												<a href="phone.php"><img src="./img/vivo.jpg" alt=""></a>
+												<img src="./img/iphone.jpg" alt="">
 												<div class="product-label">
 													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
 												</div>
 											</div>
+										</a>
 											<div class="product-body">
 												<p class="product-category">Smartphone</p>
 												<!--<h3 class="product-name"><a href="#">Samsung Galaxy S23</a></h3>
@@ -54,12 +56,14 @@
 
 										<!-- product -->
 										<div class="product">
+										<a href="laptop.php">
 											<div class="product-img">
-												<a href="laptop.php"><img src="./img/h.jpg" alt=""></a>
+											<img src="./img/h.jpg" alt="">
 												<div class="product-label">
 												<span class="new">NEW</span>
+												</div>
 											</div>
-											</div>
+										</a>
 											
 											<div class="product-body">
 												<p class="product-category">Laptop</p>
@@ -86,12 +90,14 @@
 
 										<!-- product -->
 										<div class="product">
+										<a href="led.php">
 											<div class="product-img">
-												<a href="led.jpg"><img src="./img/sa.jpg" alt=""></a>
+												<img src="./img/sa.jpg" alt="">
 												<div class="product-label">
 													<span class="new">NEW</span>
 												</div>
 											</div>
+										</a>
 											<div class="product-body">
 												<p class="product-category">LED</p>
 											<!--	<h3 class="product-name"><a href="#">Samsung TV</a></h3>
