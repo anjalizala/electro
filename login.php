@@ -8,6 +8,7 @@ if(isset($_SESSION['registration']))
 }
 ?>
 
+
 <!DOCTYPE html>
 <html>
 
@@ -97,11 +98,13 @@ if(isset($_SESSION['registration']))
     <div class="wrapper"><br><br>
         <h1>Login</h1><br>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" align="center">
+
         <div class="input-box">
                 <input type="text" name="email" placeholder="Email" required>
             </div>
         <div class="input-box">
                 <input type="password" name="password" placeholder="password" required>
+
         </div><br>
             <div class="input-box button">
                 <input type="Submit" name="login" value="Login">
@@ -110,6 +113,11 @@ if(isset($_SESSION['registration']))
     </div>
 </center>
 <br>
+
+    
+
+
 </body>
+
 <?php include "footer.php"?>
 </html>

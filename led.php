@@ -20,15 +20,15 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/s23.jpg" alt="">
+												<img src="./img/led.jpg" alt="">
 												<div class="product-label">
 													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">Smartphone</p>
-												<h3 class="product-name"><a href="#">Samsung Galaxy S23</a></h3>
+												<p class="product-category">LED</p>
+												<h3 class="product-name"><a href="#">Samsung</a></h3>
 												<h4 class="product-price">&#8377;1,20,000 </h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -83,14 +83,14 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/macbook.jpg" alt="">
+												<img src="./img/le_3.jpg" alt="">
 												<div class="product-label">
 												<span class="new">NEW</span>
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">Laptop</p>
-												<h3 class="product-name"><a href="#">MacBook Pro</a></h3>
+												<p class="product-category">LED</p>
+												<h3 class="product-name"><a href="#">Oneplus Pro TV</a></h3>
 												<h4 class="product-price">&#8377;1,30,000</h4>
 												<div class="product-rating">
 												<i class="fa fa-star"></i>
@@ -114,14 +114,14 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/i14.jpg" alt="">
+												<img src="./img/le_4.jpg" alt="">
 											<div class="product-label">
 												<span class="new">NEW</span>
 											</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">Smartphone</p>
-												<h3 class="product-name"><a href="#">iphone 14 pro max</a></h3>
+												<p class="product-category">LED</p>
+												<h3 class="product-name"><a href="#">LG Smart TV</a></h3>
 												<h4 class="product-price">&#8377;1,40,000</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -145,15 +145,15 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="./img/asu.jpg" alt="">
+												<img src="./img/le_5.jpg" alt="">
 												<div class="product-label">
 												<span class="new">NEW</span>
 											</div>
 											</div>
 											
 											<div class="product-body">
-												<p class="product-category">Laptop</p>
-												<h3 class="product-name"><a href="#">ASUS Zenbook Duo-14</a></h3>
+												<p class="product-category">LED</p>
+												<h3 class="product-name"><a href="#">Sony smart TV Duo-14</a></h3>
 												<h4 class="product-price">&#8377;99,990</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
