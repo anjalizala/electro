@@ -81,9 +81,9 @@
 										<div class="product">
 											<div class="product-img">
 												<img src="./img/pro.jpg" alt="">
-											<div class="product-label">
-												<span class="new">NEW</span>
-											</div>
+												<div class="product-label">
+													<span class="new">NEW</span>
+												</div>
 											</div>
 											<div class="product-body">
 												<p class="product-category">Smartphone</p>
