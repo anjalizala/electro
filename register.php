@@ -33,6 +33,9 @@ if(isset($_POST['submit']))
     {
         array_push($error,"All fields are required");
     }
+    if (!preg_match ("/^[a-zA-z]*$/", $name) ) {  
+        array_push($error,"Only characters and whitespace are allowed.");    
+    }
     if(!filter_var($email,FILTER_VALIDATE_EMAIL))
     {
         array_push($error,"Email is Not Valid");
@@ -57,7 +60,7 @@ if(isset($_POST['submit']))
     {
         foreach($error as $error)
         {   ?>
-            <div class="alert alert-success alert-dismissible">
+            <div class="alert alert-danger alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <?php
             echo $error;

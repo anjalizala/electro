@@ -10,6 +10,6 @@ if(!$conn)
 }
 else
 {
-    return $conn;
+    echo " ";
 }
 ?>
