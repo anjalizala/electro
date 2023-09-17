@@ -1,12 +1,12 @@
 <?php
-session_start();
-include "header.php"; 
 
+session_start();
+include "header.php";
 if(isset($_SESSION['registration']))
 {
     header("location:index.php");
-}
-?>
+
+}?>
 
 
 <!DOCTYPE html>
@@ -14,21 +14,22 @@ if(isset($_SESSION['registration']))
 
 <head>
     <title></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 
 </head>
 
 <body>
+
 <?php
     include "dbname.php";
-        if(isset($_POST['login']))
+        if(isset($_POST['submit']))
         {
             $email=$_POST['email'];
             $password=$_POST['password'];
             if(empty($email))
             {
                 ?>
-                <div class="alert alert-success alert-dismissible">
+                <div class="alert alert-danger alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 Email field required......
               </div>
@@ -39,7 +40,7 @@ if(isset($_SESSION['registration']))
             {
                 //echo "<p class='error'>password field Required</p> <br>";
                 ?>
-                <div class="alert alert-success alert-dismissible">
+                <div class="alert alert-danger alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 password field required......
               </div>
@@ -58,10 +59,9 @@ if(isset($_SESSION['registration']))
               
                $_SESSION['email'] = $row['email'];
                $_SESSION['name'] = $row['name'];
-               $_SESSION['id'] = $row['id'];
                //header("Location: index.php");
-               echo '<script>window.location="index.php"</script>';
                //exit();
+               echo '<script>window.location="index.php"</script>';
            
               
            }
@@ -69,7 +69,7 @@ if(isset($_SESSION['registration']))
              {
                    // echo "<p class='error'>Password Does not exist</p> <br>";
                    ?>
-                <div class="alert alert-success alert-dismissible">
+                <div class="alert alert-danger alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 password does not match......
               </div>
@@ -82,7 +82,7 @@ if(isset($_SESSION['registration']))
         {
            // echo "<p class='error'>Email Does not match</p> <br>";
            ?>
-           <div class="alert alert-success alert-dismissible">
+           <div class="alert alert-danger alert-dismissible">
            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
            Email does not exist.........
          </div>
@@ -93,31 +93,31 @@ if(isset($_SESSION['registration']))
         
         }
     ?>
-    <br>
+  <br>
     <center>
-    <div class="wrapper"><br><br>
-        <h1>Login</h1><br>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" align="center">
-
-        <div class="input-box">
-                <input type="text" name="email" placeholder="Email" required>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <form action="<?php //echo $_SERVER['PHP_SELF'];?>" align="center" method="POST">
+        <table>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Email" >
             </div>
-        <div class="input-box">
-                <input type="password" name="password" placeholder="password" required>
-
-        </div><br>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" >
+            </div>
             <div class="input-box button">
-                <input type="Submit" name="login" value="Login">
-            </div><br>
-            </form>
+                <input type="Submit" name="submit" value="Login">
+            </div>
+        </table>
+        </form>
     </div>
 </center>
 <br>
 
-    
 
 
+   
 </body>
+<?php include "footer.php"; ?>
 
-<?php include "footer.php"?>
 </html>
