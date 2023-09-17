@@ -92,7 +92,7 @@
 							<div class="col-md-2">
 					
 							<div class="input-box button">
-                				<input type="Submit" value="Sign In" style="width:100px; height:35px; margin-top:20px; font-size:15px;">
+                				<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; margin-top:20px; font-size:15px;"></a>
             				</div>
 						</div>
 						<!-- ACCOUNT -->
