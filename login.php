@@ -1,4 +1,5 @@
-<?php include "header.php" ?>
+<?php include "header.php"; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,12 +14,12 @@
     <center>
     <div class="wrapper"><br><br>
         <h1>Login</h1><br>
-        <form action="index.php" align="center">
+        <form action="sessionstart.php" align="center">
         <div class="input-box">
                 <input type="email" placeholder="Email" required>
             </div>
         <div class="input-box">
-                <input type="password" placeholder="password" required>
+                <input type="password" placeholder="Password" required>
         </div><br>
             <div class="input-box button">
                 <input type="Submit" value="Login">
@@ -27,6 +28,11 @@
     </div>
 </center>
 <br>
+
+    
+
+
 </body>
+
 <?php include "footer.php"?>
 </html>

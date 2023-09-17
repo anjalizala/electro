@@ -85,7 +85,7 @@
 											<div class="product-img">
 												<img src="./img/vivo_2.jpg" alt="">
 												<div class="product-label">
-												<span class="new">NEW</span>
+													<span class="new">NEW</span>
 												</div>
 											</div>
 											<div class="product-body">
@@ -115,9 +115,9 @@
 										<div class="product">
 											<div class="product-img">
 												<img src="./img/pro.jpg" alt="">
-											<div class="product-label">
-												<span class="new">NEW</span>
-											</div>
+												<div class="product-label">
+													<span class="new">NEW</span>
+												</div>
 											</div>
 											<div class="product-body">
 												<p class="product-category">Smartphone</p>
@@ -152,8 +152,8 @@
 											</div>
 											
 											<div class="product-body">
-												<p class="product-category">Laptop</p>
-												<h3 class="product-name"><a href="#">ASUS Zenbook Duo-14</a></h3>
+												<p class="product-category">Smartphone</p>
+												<h3 class="product-name"><a href="#">iphone 13 pro max</a></h3>
 												<h4 class="product-price">&#8377;99,990</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -183,8 +183,8 @@
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Samsung TV</a></h3>
+												<p class="product-category">smartphone</p>
+												<h3 class="product-name"><a href="#">iphone 14 pro max</a></h3>
 												<h4 class="product-price">&#8377;70,000 </h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>

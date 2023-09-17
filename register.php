@@ -22,7 +22,7 @@
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="text" name="phone" placeholder="Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                <input type="number" name="phone" placeholder="Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
             </div>
             <div class="input-box">
                 <input type="text" name="address" placeholder="Address Line 1" required>
