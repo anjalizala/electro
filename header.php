@@ -92,7 +92,7 @@
 							<div class="col-md-2">
 					
 							<div class="input-box button">
-                				<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; margin-top:20px; font-size:15px;"></a>
+                				<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
             				</div>
 						</div>
 						<!-- ACCOUNT -->
@@ -185,11 +185,7 @@
 						<li><a href="phone_db.php">Smartphones</a></li>
 						<li><a href="led.php">LED</a></li>
 						<li><div class="dropdown">
-						<li><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-									</a>
-							</li>
+						
 		                </div>
 					</ul>
 					<!-- /NAV -->

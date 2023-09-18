@@ -20,24 +20,14 @@
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
  <table>
             <div class="input-box">
-                <input type="text"  name="name" placeholder="Led Name" required>
+                <input type="text"  name="name" placeholder="Name" required>
             </div>
             <div class="input-box">
                 <input type="text" name="model" placeholder="Model" required>
-            </div>
-            
-           <!-- <div class="input-box">
-                <input type="text" name="description" placeholder="Description" required>-->
-            
+            </div>    
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price" required>
             </div>
-            <!-- <div class="input-box">
-                <input type="file" name="img" placeholder="Image" required>
-            </div> -->
-           <!-- <div class="input-box">
-                <input type="number" name="qty" placeholder="Quantity" required>
-            </div>-->
             <div class="input-box">
                 <input type="file" name="image" placeholder="Image" required>
             </div>
@@ -73,7 +63,10 @@ if (isset($_POST['submit']))
         
         if (mysqli_query($conn, $sql)) 
         {
-            echo "Product Insert Succecsfully";
+            echo '<br><br><div class="alert alert-success alert-dismissible">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            'Product Inserted Successfully...'.
+          '</div>';
         } 
         else 
         {
