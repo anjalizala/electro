@@ -38,26 +38,7 @@
             <div class="input-box">
                 <input type="text"  name="name" placeholder="Laptop Name" required>
             </div>
-            <!--<div class="input-box">
-                <input type="text" name="category" placeholder="Category" required>
-            </div>-->
-           <!-- <div class="input-box">
-            <label for="category">Categories</label>
-                <select id="category" name="category">
-                    <option value="volvo">Smartphone</option>
-                    <option value="saab">Led</option>
-                    <option value="fiat">Laptop</option>
-                </select>
-            </div>-->
-            <!-- <div class="input-box">
-            <label for="category">Categories</label>
-            <select class="form-dropdown" id="category" name="category" style="width:150px" 
-            data-component="dropdown" aria-label="Product Category"><option value="">Please Select</option>
-            <option value="smartphone">SMARTPHONE</option>
-            <option value="led">LED</option>
-            <option value="laptop">LAPTOP</option>
-            </select>
-            </div> -->
+           
             <div class="input-box">
                 <input type="text" name="model" placeholder="Model" required>
             </div>
@@ -71,9 +52,7 @@
             <div class="input-box">
                 <input type="file" name="img" placeholder="Image" required>
             </div>
-           <!-- <div class="input-box">
-                <input type="number" name="qty" placeholder="Quantity" required>
-            </div>-->
+           
             <div class="input-box button">
                 <input type="Submit" name="submit" value="ADD">
             </div>
@@ -91,62 +70,39 @@ if(isset($_POST['submit']))
 	$model=$_POST['model'];
     $price=$_POST['price'];
     $img=$_POST['img'];
+    //for file upload
+$target_dir="img/"; //for image upload in which folder
 
+$target_file=$target_dir . basename($_FILES["img"] ["name"]) ; //which file upload from form and where
+//echo "$target_file";
 
-    if(isset($_FILES['img']['name']))
+$imageFileType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
+{
+    $img=$target_file;
+    $sql="INSERT INTO laptop VALUES (NULL,'$name','$model',$price,'$image_name')";
+    $res=mysqli_query($conn,$sql);
+    if($res)
     {
-        //Upload the Image
-        //To upload image we need image name, source path and destination path
-        $img = $_FILES['img']['name'];
-        
-        // Upload the Image only if image is selected
-        if($img != "")
-        {
-
-            //Auto Rename our Image
-            //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
-            $ext = end(explode('.', $img));
-
-            //Rename the Image
-            $img = "laptop".rand(000, 999).'.'.$ext; // e.g. Food_Category_834.jpg
-            
-
-            $source_path = $_FILES['img']['tmp_name'];
-
-            $destination_path = "../img".$img;
-
-            //Finally Upload the Image
-            $upload = move_uploaded_file($source_path, $destination_path);
-
-            //Check whether the image is uploaded or not
-            //And if the image is not uploaded then we will stop the process and redirect with error message
-            if($upload==false)
-            {
-                //SEt message
-                $_SESSION['upload'] = "<div class='error'>Failed to Upload Image. </div>";
-                //Redirect to Add CAtegory Page
-                header('location:'.SITEURL.'add-laptop.php');
-                //STop the Process
-                die();
-            }
-
-        }
+        echo"record inserted";
     }
     else
     {
-        //Don't Upload Image and set the image_name value as blank
-        $img="";
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+}
+   
 
 // echo '<script>window.location="laptop.php"</script>';
-$sql = "INSERT INTO laptop (name, model, price)
-VALUES ('$name','$model',$price)";
+// $sql = "INSERT INTO laptop (name, model, price)
+// VALUES ('$name','$model',$price)";
 
-if (mysqli_query($conn, $sql)) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+// if (mysqli_query($conn, $sql)) {
+//   echo "New record created successfully";
+// } else {
+//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// }
 
 mysqli_close($conn);
 }
