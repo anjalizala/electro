@@ -13,13 +13,13 @@
     <br>
 <center>
         <div class="wrapper">
-        <h2>Add Product</h2>
+        <h2>Add Laptop</h2>
         <br>
 
  <form action="" method="POST">
  <table>
             <div class="input-box">
-                <input type="text"  name="name" placeholder="Laptop Name" required>
+                <input type="text"  name="name" placeholder="Name" required>
             </div>
            
             <div class="input-box">
@@ -71,12 +71,26 @@ if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
     $res=mysqli_query($conn,$sql);
     if($res)
     {
-        echo"record inserted";
-    }
-    else
-    {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+
+       
+        $image = $target_file;
+        // Insert data into the database
+        $sql = "INSERT INTO laptop (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
+        
+        if (mysqli_query($conn, $sql)) 
+        {
+            echo '<br><br><div class="alert alert-success alert-dismissible">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            'Product Inserted Successfully...'.
+          '</div>';
+        } 
+        else 
+        {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    } 
+    else 
+
 }
    
 
