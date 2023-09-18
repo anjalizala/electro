@@ -13,13 +13,13 @@
     <br>
 <center>
         <div class="wrapper">
-        <h2>Add Product</h2>
+        <h2>Add Laptop</h2>
         <br>
 
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
  <table>
             <div class="input-box">
-                <input type="text"  name="name" placeholder="Laptop Name" required>
+                <input type="text"  name="name" placeholder="Name" required>
             </div>
            
             <div class="input-box">
@@ -64,7 +64,10 @@ if (isset($_POST['submit']))
         
         if (mysqli_query($conn, $sql)) 
         {
-            echo "Product Insert Succecsfully";
+            echo '<br><br><div class="alert alert-success alert-dismissible">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            'Product Inserted Successfully...'.
+          '</div>';
         } 
         else 
         {
