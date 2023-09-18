@@ -1,15 +1,10 @@
 <?php include "header.php"; ?>
-
-
-		<!-- SECTION -->
-		<div class="section">
+<!-- SECTION -->
+<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
-	
-
 					<!-- Products tab & slick -->
 					<div class="col-md-12">
 						<div class="row">
@@ -17,19 +12,50 @@
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-										<div class="product">
+			
+<?php 
+            include "dbname.php";
+            //Display all the laptop that are active
+            //Sql Query
+            $sql = "SELECT * FROM  led";
+
+            //Execute the Query
+            $res = mysqli_query($conn, $sql);
+
+            //Count Rows
+            $count = mysqli_num_rows($res);
+             //CHeck whether categories available or not
+             if($count>0)
+             {
+                 //CAtegories Available
+                 while($row=mysqli_fetch_assoc($res))
+                 {
+
+                   // echo "  Name: " . $row["name"]. " " . $row["model"]. " " . $row["price"]. "<br>";
+                     //Get the Values
+                   
+                    // $id = $row['p_id'];
+                     $name = $row['name']; 
+                     $model = $row['model']; 
+                     $price = $row['price'];
+                    // $img = $row['img']                  
+                     ?>
+                      
+                      
+                     <!-- product body -->
+                     <div class="product">
+                     <span><?php //echo $id?></span> 
 											<div class="product-img">
-												<img src="./img/led.jpg" alt="">
+												<img src="./img/samsung.jpg" alt="">
 												<div class="product-label">
 													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Samsung</a></h3>
-												<h4 class="product-price">&#8377;1,20,000 </h4>
+												<p class="product-category"><?php echo $name ?></p>
+												<h3 class="product-name"><a href="#"><?php echo $model ?></a></h3>
+												<h4 class="product-price">&#8377;<?php echo $price ?> </h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -47,163 +73,29 @@
 												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 											</div>
 										</div>
-										<!-- /product -->
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/led_3.jpg" alt="">
-												<div class="product-label">
-													<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Sony Smart TV</a></h3>
-												<h4 class="product-price">&#8377;50,000 </h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
 										<!-- /product -->
+                     <?php
+                 }
+             }
+               //CAtegories Not Available
+                 else {
+                    echo "0 results";
+                  }
+                  
+                  mysqli_close($conn);
+         
+         ?>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/le_3.jpg" alt="">
-												<div class="product-label">
-												<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Oneplus Pro TV</a></h3>
-												<h4 class="product-price">&#8377;1,30,000</h4>
-												<div class="product-rating">
-												<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/le_4.jpg" alt="">
-											<div class="product-label">
-												<span class="new">NEW</span>
-											</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">LG Smart TV</a></h3>
-												<h4 class="product-price">&#8377;1,40,000</h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+									
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/le_5.jpg" alt="">
-												<div class="product-label">
-												<span class="new">NEW</span>
-											</div>
-											</div>
-											
-											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Sony smart TV Duo-14</a></h3>
-												<h4 class="product-price">&#8377;99,990</h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+										
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/sa.jpg" alt="">
-												<div class="product-label">
-													<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">LED</p>
-												<h3 class="product-name"><a href="#">Samsung TV</a></h3>
-												<h4 class="product-price">&#8377;70,000 </h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+										
+										
+
+										
 										</div>
 											<div id="slick-nav-1" class="products-slick-nav"></div>
 								</div>

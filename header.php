@@ -181,8 +181,8 @@
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="categories.php">Categories</a></li>
-						<li><a href="laptop.php">Laptops</a></li>
-						<li><a href="phone.php">Smartphones</a></li>
+						<li><a href="lap.php">Laptops</a></li>
+						<li><a href="phone_db.php">Smartphones</a></li>
 						<li><a href="led.php">LED</a></li>
 						<li><div class="dropdown">
 						<li><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">

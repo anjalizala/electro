@@ -17,7 +17,7 @@
             include "dbname.php";
             //Display all the laptop that are active
             //Sql Query
-            $sql = "SELECT * FROM  laptop";
+            $sql = "SELECT * FROM  phone";
 
             //Execute the Query
             $res = mysqli_query($conn, $sql);
@@ -34,7 +34,7 @@
                    // echo "  Name: " . $row["name"]. " " . $row["model"]. " " . $row["price"]. "<br>";
                      //Get the Values
                    
-                    // $id = $row['p_id'];
+                     $id = $row['p_id'];
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
