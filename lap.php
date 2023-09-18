@@ -38,7 +38,7 @@
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
-                    // $img = $row['img']                  
+                     $img = $row['img'];                  
                      ?>
                       
                       
@@ -46,7 +46,7 @@
                      <div class="product">
                      <span><?php //echo $id?></span> 
 											<div class="product-img">
-												<img src="./img/samsung.jpg" alt="">
+												<img src="<?php echo $img ?>" alt="">
 												<div class="product-label">
 													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
