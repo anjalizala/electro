@@ -38,26 +38,7 @@
             <div class="input-box">
                 <input type="text"  name="name" placeholder="Phone Name" required>
             </div>
-            <!--<div class="input-box">
-                <input type="text" name="category" placeholder="Category" required>
-            </div>-->
-           <!-- <div class="input-box">
-            <label for="category">Categories</label>
-                <select id="category" name="category">
-                    <option value="volvo">Smartphone</option>
-                    <option value="saab">Led</option>
-                    <option value="fiat">Laptop</option>
-                </select>
-            </div>-->
-            <!-- <div class="input-box">
-            <label for="category">Categories</label>
-            <select class="form-dropdown" id="category" name="category" style="width:150px" 
-            data-component="dropdown" aria-label="Product Category"><option value="">Please Select</option>
-            <option value="smartphone">SMARTPHONE</option>
-            <option value="led">LED</option>
-            <option value="laptop">LAPTOP</option>
-            </select>
-            </div> -->
+           
             <div class="input-box">
                 <input type="text" name="model" placeholder="Model" required>
             </div>
