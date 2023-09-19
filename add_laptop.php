@@ -16,7 +16,7 @@
         <h2>Add Laptop</h2>
         
 
- <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
+ <form action="" method="POST">
  <table>
             <div class="input-box">
                 <input type="text"  name="id" placeholder="id">
@@ -29,10 +29,15 @@
             <div class="input-box">
                 <input type="text" name="model" placeholder="Model" >
             </div>
+            
+           <!-- <div class="input-box">
+                <input type="text" name="description" placeholder="Description" required>-->
+            </div>
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price" >
             </div>
             <div class="input-box">
+
                 <input type="file" name="image" accept="image/*" placeholder="Image" >
             </div>
            
@@ -41,6 +46,7 @@
                 <div class="input-box button">
                     <input type="Submit" name="add" value="ADD">     
                 </div>
+
             </div>
             <div class="col-md-4">
                 <div class="input-box button">
@@ -54,10 +60,10 @@
             </div>
         </div>
            
-</table>
-</form>
+        </table>
 </div>
 </center>
+
 
 <?php
 // Database connection
@@ -68,14 +74,24 @@ if (isset($_POST['add']))
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
-    
-    // File upload
-    $target_dir = "images/";
-    $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+    $img=$_POST['img'];
+    //for file upload
+$target_dir="img/"; //for image upload in which folder
+
+$target_file=$target_dir . basename($_FILES["img"] ["name"]) ; //which file upload from form and where
+//echo "$target_file";
+
+$imageFileType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
+{
+    $img=$target_file;
+    $sql="INSERT INTO laptop VALUES (NULL,'$name','$model',$price,'$image_name')";
+    $res=mysqli_query($conn,$sql);
+    if($res)
     {
+
+       
         $image = $target_file;
         // Insert data into the database
         $sql = "INSERT INTO laptop (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
@@ -93,10 +109,9 @@ if (isset($_POST['add']))
         }
     } 
     else 
-    {
-        echo "Error uploading the image.";
-    }
+
 }
+
 //update
 if(isset($_POST['edit']))
 {
@@ -177,6 +192,7 @@ if(isset($_POST['delete']))
        }
    }
 }
+
 mysqli_close($conn);
 ?>
 
