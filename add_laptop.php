@@ -87,6 +87,7 @@
 // Database connection
  include "dbname.php";
 
+
 if (isset($_POST['add'])) 
 {
     $name=$_POST['name'];
@@ -218,6 +219,7 @@ if(isset($_POST['delete']))
 }
 
 mysqli_close($conn);
+
 ?>
 
 <br><br>
