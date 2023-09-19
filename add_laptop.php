@@ -49,62 +49,44 @@
 <?php
 // Database connection
  include "dbname.php";
-
-if (isset($_POST['submit'])) 
-{
-    $name=$_POST['name'];
-	$model=$_POST['model'];
-    $price=$_POST['price'];
-    $img=$_POST['img'];
-    //for file upload
-$target_dir="img/"; //for image upload in which folder
-
-$target_file=$target_dir . basename($_FILES["img"] ["name"]) ; //which file upload from form and where
-//echo "$target_file";
-
-$imageFileType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
-{
-    $img=$target_file;
-    $sql="INSERT INTO laptop VALUES (NULL,'$name','$model',$price,'$image_name')";
-    $res=mysqli_query($conn,$sql);
-    if($res)
-    {
-
-       
-        $image = $target_file;
-        // Insert data into the database
-        $sql = "INSERT INTO laptop (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
-        
-        if (mysqli_query($conn, $sql)) 
-        {
-            echo '<br><br><div class="alert alert-success alert-dismissible">'.
-            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-            'Product Inserted Successfully...'.
-          '</div>';
-        } 
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    } 
-    else 
-
-}
-   
-
-// echo '<script>window.location="laptop.php"</script>';
-// $sql = "INSERT INTO laptop (name, model, price)
-// VALUES ('$name','$model',$price)";
-
-// if (mysqli_query($conn, $sql)) {
-//   echo "New record created successfully";
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
-
-mysqli_close($conn);
+ if (isset($_POST['submit'])) 
+ {
+     $name=$_POST['name'];
+     $model=$_POST['model'];
+     $price=$_POST['price'];
+    
+     
+     // File upload
+     $target_dir = "images/";
+     $target_file = $target_dir . basename($_FILES["image"]["name"]);
+     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+     
+     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+     {
+         $image = $target_file;
+         // Insert data into the database
+         $sql = "INSERT INTO phone (name, model, price , image) VALUES ('$name', '$model', $price , '$image')";
+         
+         if (mysqli_query($conn, $sql)) 
+         {
+ 
+             echo '<br><br><div class="alert alert-success alert-dismissible">'.
+             '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+             'Product Inserted Successfully...'.
+           '</div>';
+             
+         } 
+         else 
+         {
+             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+         }
+     } 
+     else 
+     {
+         echo "Error uploading the image.";
+     }
+ }
+ mysqli_close($conn);
 ?>
 
 <br><br>

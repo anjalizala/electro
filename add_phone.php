@@ -27,9 +27,19 @@
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price" required>
             </div>
+            <label for="input-box">Description</label>
+            <textarea id="desc" name="des" rows="4" cols="50">
+            </textarea>
             <div class="input-box">
                 <input type="file" name="image" placeholder="Image" required>
             </div>
+            <!-- <div class="input-box">
+                <input type="text" name="desc" placeholder="Description" required>
+            </div> -->
+            <!--<div class="input-box">-->
+          
+            <!--</div>-->
+                
             <div class="input-box button">
                 <input type="Submit" name="submit" value="ADD">
             </div>
@@ -48,6 +58,7 @@ if (isset($_POST['submit']))
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
+    $des=$_POST['des'];
     
     // File upload
     $target_dir = "images/";
@@ -58,8 +69,7 @@ if (isset($_POST['submit']))
     {
         $image = $target_file;
         // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
-        
+        $sql = "INSERT INTO phone (name, model, price , des , image) VALUES ('$name', '$model', $price ,  '$des' , '$image')";     
         if (mysqli_query($conn, $sql)) 
         {
 

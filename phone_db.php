@@ -38,7 +38,7 @@
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
-                     $img = $row['img']                  
+                     $image = $row['image'];                 
                      ?>
                       
                       
@@ -46,7 +46,7 @@
                      <div class="product">
                      <span><?php //echo $id?></span> 
 											<div class="product-img">
-												<img src="<?php echo $img;?>" alt="">
+												<img src="<?php echo $image;?>" alt="">
 												<div class="product-label">
 													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
@@ -86,16 +86,7 @@
                   mysqli_close($conn);
          
          ?>
-
-
-									
-
-										
-
-										
-										
-
-										
+		 										
 										</div>
 											<div id="slick-nav-1" class="products-slick-nav"></div>
 								</div>

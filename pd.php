@@ -1,37 +1,30 @@
+<?php session_start();?>
 <?php include "header.php";?>
+
 
 <!-- SECTION -->
 <div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">
+				<div class="row">							
+						
 					<!-- Product main img -->
-					<div class="col-md-5 col-md-push-2">
-						<div id="product-main-img">
+				   <!-- <div class="col-md-5 col-md-push-2">
+						 <div id="product-main-img">
 							<div class="product-preview">
-								<img src="" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="" alt="">
+								<img src="<?php //echo $image;?>" alt="">
 							</div>
 						</div>
-					</div>
+					</div>    -->
 					<!-- /Product main img -->
+
+					
 <?php 
             include "dbname.php";
             //Display all the laptop that are active
             //Sql Query
-            $sql = "SELECT * FROM  laptop";
+            $sql = "SELECT * FROM  phone";
 
             //Execute the Query
             $res = mysqli_query($conn, $sql);
@@ -45,51 +38,57 @@
                  while($row=mysqli_fetch_assoc($res))
                  {
 
-                   // echo "  Name: " . $row["name"]. " " . $row["model"]. " " . $row["price"]. "<br>";
-                     //Get the Values
                    
                     // $id = $row['p_id'];
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
-                    // $img = $row['img']  
-                   
-                }
-            }
-              //CAtegories Not Available
-                else {
-                   echo "0 results";
-                 }
-                 
-                 mysqli_close($conn);
-        
-        ?>
-                   
-                     
-                     <!-- Product thumb imgs -->
+                     $image = $row['image'];
+					 $des = $row['des'];
+				// if(mysqli_num_rows($res) == 1)
+				// {
+				// 	$row=mysqli_fetch_assoc($res);
+				// 	if ( $_row['p_id'] == $id)
+				// 	{
+				// 	   $_SESSION['name'] = $row['name'];
+				// 	   $_SESSION['model'] = $row['model'];
+				// 	   $_SESSION['price'] = $row['price'];
+				// 	   $_SESSION['des'] = $row['des'];
+				// 	   //header("Location: index.php");
+				// 	   //exit();
+				// 	   echo '<script>window.location="index.php"</script>';
+				   
+				// 	}
+				   
+				?> 
+				<!-- Product main img -->
+				 <div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div class="product-preview">
+								<img src="<?php echo $image;?>" alt="">
+							</div>
+						</div>
+					</div> 
+					<!-- /Product main img -->
+					
+					<!-- Product thumb imgs -->
 					<div class="col-md-2  col-md-pull-5">
 						<div id="product-imgs">
 							<div class="product-preview">
-								<img src="" alt="">
+								<img src="<?php echo $image;?>" alt="">
+							</div>
+							<div class="product-preview">
+								<img src="<?php echo $image;?>" alt="">
 							</div>
 
 							<div class="product-preview">
-								<img src="" alt="">
+								<img src="<?php echo $image;?>" alt="">
 							</div>
-
-							<div class="product-preview">
-								<img src="" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="" alt="">
-							</div>
+							
 						</div>
 					</div>
-              
-					<!-- /Product thumb imgs -->
-
-                    <!-- Product details -->
+					<!-- Product thumb imgs --> 		              
+					
 					<div class="col-md-5">
 						<div class="product-details">
 							<h2 class="product-name"><?php echo $model ?></h2>
@@ -107,7 +106,10 @@
 								<h3 class="product-price"><?php echo $price ?></h3>
 								<span class="product-available">In Stock</span>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<!-- <p<?php //echo $des ?></p> -->
+							<div class="product-details">
+							<h2 class="product-name"><?php echo $des ?></h2>
+							</div>
 
 							
 												<!-- /product -->
@@ -115,7 +117,7 @@
 
 							<ul class="product-btns">
 								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+								
 							</ul>
 
 							<ul class="product-links">
@@ -136,17 +138,30 @@
 						</div>
 					</div>
 					<!-- /Product details -->
-                    <!-- Product tab -->
+					<!-- Product tab -->
 					<div class="col-md-12">
 						<div id="product-tab">
 							<!-- product tab nav -->
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+								
 							</ul>
-							<!-- /product tab nav -->
-                        </div>
+						
+
+				
+                 <?php  
+                }
+			}
+           // }
+              //CAtegories Not Available
+                else {
+                   echo "0 results";
+                 }
+                 
+                 mysqli_close($conn);
+				 ?>
+				 	<!-- /product tab nav -->
+					 </div>
                     </div>
                     	<!-- /product tab -->
 				</div>
@@ -154,15 +169,7 @@
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /SECTION -->
-
-              
-
-                    
-
-                      
-                      
-                    
+		<!-- /SECTION -->                   
 
 <?php include "footer.php"; ?>
 
