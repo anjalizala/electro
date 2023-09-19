@@ -6,7 +6,25 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="./css/style2.css">
-    
+    <style>
+        input[type=file]::file-selector-button {
+        margin-right: ;
+        border: none;
+        margin-top: 5px;
+        margin-left: 1px;
+        margin-bottom: 5px;
+        background: #D10024;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: background .2s ease-in-out;
+        }
+
+        input[type=file]::file-selector-button:hover {
+        background: #D10024;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,7 +49,7 @@
                 <input type="number" name="price" placeholder="Price">
             </div>
             <div class="input-box">
-                <input type="file" name="image" id="images" accept="image/*">
+            <input type="file" name="image" placeholder="Image" >
             </div>
             <div class="row">
             <div class="col-md-4">
