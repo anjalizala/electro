@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,33 +89,48 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-						<div class="row">
-							<div class="col-md-2">
-					
+						<div class="col-md-2">
 							<div class="input-box button">
-                				<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
+							<?php if( isset($_SESSION['name']) && !empty($_SESSION['name']) )
+								{
+							?>
+      							<a href="register.php"><input type="Submit" value="Sign Out" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
+							<?php }
+								else	
+								{ ?>
+     							<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
+						    <?php   } ?>
+                				<!-- <a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a> -->
             				</div>
 						</div>
+						
+						<?php
+                				if(isset($_SESSION["name"]))
+								{
+                    				$name_login = $_SESSION["name"];
+                    				$lg="Log Out";
+                				}
+                				else
+								{
+                    				$name_login = "Guest";
+                    				$lg="Log In";
+                				}
+            
+							?>
+							<div class="col-md-2">
+										<li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $name_login; ?> </a></li>
+							</div>
+														
 						<!-- ACCOUNT -->
 						<div class="col-md-2">
 							<div class="header-ctn">
-								<!-- Wishlist -->
-								<!--<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Your Wishlist</span>
-										<div class="qty">2</div>
-									</a>
-								</div>-->
-								<!-- /Wishlist -->
-
-								<!-- Cart -->
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
 										<div class="qty">3</div>
 									</a>
+								</div>
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<div class="product-widget">
@@ -152,12 +168,7 @@
 								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
+
 								<!-- /Menu Toogle -->
 							</div>
 						</div>
@@ -184,6 +195,7 @@
 						<li><a href="lap.php">Laptops</a></li>
 						<li><a href="phone_db.php">Smartphones</a></li>
 						<li><a href="led.php">LED</a></li>
+						
 						<li><div class="dropdown">
 						
 		                </div>
