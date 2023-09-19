@@ -59,6 +59,7 @@ if(isset($_SESSION['registration']))
               
                $_SESSION['email'] = $row['email'];
                $_SESSION['name'] = $row['name'];
+               $_SESSION['id']= $row['r_id'];
                //header("Location: index.php");
                //exit();
                echo '<script>window.location="index.php"</script>';

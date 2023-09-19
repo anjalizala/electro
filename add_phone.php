@@ -51,6 +51,15 @@
             <div class="input-box">
             <input type="file" name="image" placeholder="Image" >
             </div>
+            <div class="input-box">
+            <input type="file" name="image1" placeholder="Image1" >
+            </div>
+            <div class="input-box">
+            <input type="file" name="image2" placeholder="Image2" >
+            </div>
+            <div class="input-box">
+            <input type="file" name="image3" placeholder="Image3" >
+            </div>
             <div class="row">
             <div class="col-md-4">
                 <div class="input-box button">
@@ -93,10 +102,13 @@ if (isset($_POST['add']))
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
     {
         $image = $target_file;
+        $image1= $target_file;
+        $image2= $target_file;
+        $image3 = $target_file;
         // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
-        
-        if (mysqli_query($conn, $sql)) 
+        $sql = "INSERT INTO phone (name, model, price , img ,img1 ,img2 ,img3) VALUES ('$name', '$model', $price , '$image','$image1','$image2',$image3)";
+        $res1=mysqli_query($conn,$sql);
+        if (!$res1) 
         {
 
             echo '<br><br><div class="alert alert-success alert-dismissible">'.
