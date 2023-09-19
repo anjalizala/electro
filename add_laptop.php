@@ -6,7 +6,25 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="./css/style2.css">
+    <style>
+        input[type=file]::file-selector-button {
+        margin-right: ;
+        border: none;
+        margin-top: 5px;
+        margin-left: 1px;
+        margin-bottom: 5px;
+        background: #D10024;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: background .2s ease-in-out;
+        }
 
+        input[type=file]::file-selector-button:hover {
+        background: #D10024;
+        }
+    </style>
 </head>
 
 <body>
@@ -108,10 +126,16 @@ if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
     } 
-    else 
+    else
+    {
+        echo '<br><br><div class="alert alert-success alert-dismissible">'.
+        '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+        'Error uploading the image...'.
+      '</div>';
+    } 
 
 }
-
+}
 //update
 if(isset($_POST['edit']))
 {
