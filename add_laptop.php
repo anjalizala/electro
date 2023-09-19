@@ -14,32 +14,51 @@
 <center>
         <div class="wrapper">
         <h2>Add Laptop</h2>
-        <br>
+        
 
  <form action="" method="POST">
  <table>
             <div class="input-box">
-                <input type="text"  name="name" placeholder="Name" required>
+                <input type="text"  name="id" placeholder="id">
+            </div>
+
+            <div class="input-box">
+                <input type="text"  name="name" placeholder="Name" >
             </div>
            
             <div class="input-box">
-                <input type="text" name="model" placeholder="Model" required>
+                <input type="text" name="model" placeholder="Model" >
             </div>
             
            <!-- <div class="input-box">
                 <input type="text" name="description" placeholder="Description" required>-->
             </div>
             <div class="input-box">
-                <input type="number" name="price" placeholder="Price" required>
+                <input type="number" name="price" placeholder="Price" >
             </div>
             <div class="input-box">
-                <input type="file" name="img" placeholder="Image" required>
+
+                <input type="file" name="image" accept="image/*" placeholder="Image" >
             </div>
            
-            <div class="input-box button">
-                <input type="Submit" name="submit" value="ADD">
-               <!-- <input type="Submit" name="edit" value="EDIT">-->
+            <div class="row">
+            <div class="col-md-4">
+                <div class="input-box button">
+                    <input type="Submit" name="add" value="ADD">     
+                </div>
+
             </div>
+            <div class="col-md-4">
+                <div class="input-box button">
+                     <input type="Submit" name="edit" value="EDIT">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-box button">
+                    <input type="Submit" name="delete" value="DELETE">
+                </div>
+            </div>
+        </div>
            
         </table>
 </div>
@@ -50,7 +69,7 @@
 // Database connection
  include "dbname.php";
 
-if (isset($_POST['submit'])) 
+if (isset($_POST['add'])) 
 {
     $name=$_POST['name'];
 	$model=$_POST['model'];
@@ -92,17 +111,87 @@ if(move_uploaded_file($_FILES["img"] ["tmp_name"],$target_file))
     else 
 
 }
-   
 
-// echo '<script>window.location="laptop.php"</script>';
-// $sql = "INSERT INTO laptop (name, model, price)
-// VALUES ('$name','$model',$price)";
+//update
+if(isset($_POST['edit']))
+{
+    if(isset($_POST['id']))
+    {
+        $id=$_POST['id'];
+        $name=$_POST['name'];
+        $model=$_POST['model'];
+        $price=$_POST['price'];
 
-// if (mysqli_query($conn, $sql)) {
-//   echo "New record created successfully";
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
+        //for update image
+        //update data with image
+        if(!empty($_FILES['image'] ['name']))
+        {
+            
+            $target_dir="images/";
+            $target_file=$target_dir.basename($_FILES['image']['name']);
+            $imagetype=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            if(move_uploaded_file($_FILES['image']['tmp_name'],$target_file))
+            {
+                $image=$target_file;
+                $sql="UPDATE laptop SET name='$name',model='$model',price=$price ,img='$image' WHERE lp_id=$id";
+            }
+            else
+            {
+                echo '<br><br><div class="alert alert-danger alert-dismissible">'.
+                '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+                'Error To New Upload Data...'.
+              '</div>';
+            }
+        }
+        else
+        {
+            //update data without image
+            $sql="UPDATE laptop SET name='$name', model='$model',price=$price WHERE lp_id=$id";
+        }
+
+        $res=mysqli_query($conn,$sql);
+        if($res)
+        {
+            echo '<br><br><div class="alert alert-success alert-dismissible">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            'Product Updated Successfully...'.
+          '</div>';
+        }
+        else
+        {
+            echo '<br><br><div class="alert alert-danger alert-dismissible">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            'Data Not Upadated...'.
+          '</div>';
+        }
+
+       
+    }
+}
+//Delete
+if(isset($_POST['delete']))
+{
+   if(isset($_POST['id']))
+   {
+       $id=$_POST['id'];
+       $sql="DELETE FROM laptop WHERE lp_id = $id";
+       $res=mysqli_query($conn,$sql);
+   if($res)
+       {
+           echo '<br><br><div class="alert alert-success alert-dismissible">'.
+           '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+           'Recorded Deleted...'.
+         '</div>';
+       }
+   else
+       {
+           echo '<br><br><div class="alert alert-danger alert-dismissible">'.
+               '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+               'Recorded Not Deleted...'.
+             '</div>';
+       }
+   }
+}
 
 mysqli_close($conn);
 ?>
