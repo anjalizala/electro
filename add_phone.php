@@ -48,20 +48,12 @@
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price">
             </div>
-            <label for="input-box">Description</label>
-            <textarea id="desc" name="des" rows="4" cols="50">
-            </textarea>
+
             <div class="input-box">
             <input type="file" name="image" placeholder="Image" >
             </div>
             <div class="input-box">
-            <input type="file" name="image1" placeholder="Image1" >
-            </div>
-            <div class="input-box">
-            <input type="file" name="image2" placeholder="Image2" >
-            </div>
-            <div class="input-box">
-            <input type="file" name="image3" placeholder="Image3" >
+            <input type="file" name="image1" placeholder="Image" >
             </div>
             <div class="row">
             <div class="col-md-4">
@@ -86,42 +78,33 @@
 </form>
 </div>
 </center>
-
 <?php
-// Database connection
- include "dbname.php";
-
+include "dbname.php";
 if (isset($_POST['add'])) 
 {
-    
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
-    $des=$_POST['des'];
     
     // File upload
     $target_dir = "images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $target_file1 =$target_dir . basename($_FILES["image1"]["name1"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file && $_FILES["image1"]["tmp_name1"], $target_file1)) 
     {
         $image = $target_file;
-        $image1= $target_file;
-        $image2= $target_file;
-        $image3 = $target_file;
+        $img1  = $target_file1;
         // Insert data into the database
-
-        $sql = "INSERT INTO phone (name, model, price , img ,img1 ,img2 ,img3) VALUES ('$name', '$model', $price , '$image','$image1','$image2',$image3)";
-        $res1=mysqli_query($conn,$sql);
-        if (!$res1) 
+        $sql = "INSERT INTO phone (name, model, price , img , img1) VALUES ('$name', '$model', $price , '$image', '$img1')";
+        
+        if (mysqli_query($conn, $sql)) 
         {
-
             echo '<br><br><div class="alert alert-success alert-dismissible">'.
             '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
             'Product Inserted Successfully...'.
           '</div>';
-            
         } 
         else 
         {
@@ -130,10 +113,7 @@ if (isset($_POST['add']))
     } 
     else 
     {
-        echo '<br><br><div class="alert alert-danger alert-dismissible">'.
-        '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-        'Error uploading the Image...'.
-      '</div>';
+        echo "Error uploading the image.";
     }
 }
 //Update 

@@ -38,7 +38,7 @@
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
-                     $image = $row['image'];                 
+                     $image = $row['img'];                 
                      ?>
                       
                       
