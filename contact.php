@@ -1,4 +1,8 @@
-<?php include "header.php" ?>
+<?php
+session_start();
+include "header.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -260,19 +264,19 @@ body, button, input {
           <div class="app-form">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="NAME" name="name">
+              <input class="app-form-control" type="text" placeholder="NAME" name="name">
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="EMAIL" name="email">
+              <input class="app-form-control" type="text" placeholder="EMAIL" name="email">
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="CONTACT NO" name="contact">
+              <input class="app-form-control" type="number" placeholder="CONTACT NO" name="contact">
             </div>
             <div class="app-form-group message">
-              <input class="app-form-control" placeholder="MESSAGE" name="message">
+              <input class="app-form-control" type="text" placeholder="MESSAGE" name="message">
             </div>
             <div class="app-form-group buttons">
-              <button class="app-form-button" name="submit">SEND</button>
+              <button class="app-form-button" type="submit" name="submit">SEND</button>
             </div>
             </form>
           </div>
@@ -285,15 +289,15 @@ body, button, input {
 <?php
 
 include "dbname.php";
+
 if(isset($_POST['submit']))
 {
 $name=$_POST['name'];
 $email=$_POST['email'];
 $contact=$_POST['contact'];
 $message=$_POST['message'];
-$r_id = mysql_insert_id();
 
-$sql="INSERT INTO contact(con_id, name, email, contact, message, r_id) VALUES(NULL, '$name', '$email', $contact, '$message', $rid)";
+$sql="INSERT INTO contant(r_id,name,email,message,contact) VALUES(".$_SESSION['id'].",'$name','$email','$message',$contact)";
 $q=mysqli_query($conn,$sql);
 if(!$q)
 {
@@ -302,7 +306,8 @@ if(!$q)
             'Can not sent message...'.
           '</div>';
 }
-else{
+else
+{
     echo '<br><br><div class="alert alert-success alert-dismissible">'.
             '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
             'Message sent Successfully...'.

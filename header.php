@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +96,9 @@
 							<?php if( isset($_SESSION['name']) && !empty($_SESSION['name']) )
 								{
 							?>
-      							<a href="register.php"><input type="Submit" value="Sign Out" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
+
+      							<a href="logout.php"><input type="Submit" value="Sign Out" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
+
 							<?php }
 								else	
 								{ ?>

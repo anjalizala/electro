@@ -36,16 +36,12 @@
 
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
  <table>
-<<<<<<< HEAD
-            <div class="input-box">
-                <input type="text"  name="name" placeholder="Brand Name" required>
-=======
-             <div class="input-box">
+      <div class="input-box">
                 <input type="text"  name="id" placeholder="Id">
             </div>
            <div class="input-box">
                 <input type="text"  name="name" placeholder="Name">
->>>>>>> 1c07b3b4d7c8f21e92c9f99580aa0d4d0d7c0547
+
             </div>
             <div class="input-box">
                 <input type="text" name="model" placeholder="Model">
@@ -53,11 +49,9 @@
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price">
             </div>
-            <label for="input-box">Description</label>
-            <textarea id="desc" name="des" rows="4" cols="50">
-            </textarea>
+
             <div class="input-box">
-<<<<<<< HEAD
+
                 <input type="file" name="image" placeholder=" Main Image" required>
             </div>
             <div class="input-box">
@@ -76,17 +70,14 @@
           
             <!--</div>-->
                 
-            <div class="input-box button">
-                <input type="Submit" name="submit" value="ADD">
-=======
-            <input type="file" name="image" placeholder="Image" >
-            </div>
+            
+
             <div class="row">
             <div class="col-md-4">
                 <div class="input-box button">
                     <input type="Submit" name="add" value="ADD">     
                 </div>
->>>>>>> 1c07b3b4d7c8f21e92c9f99580aa0d4d0d7c0547
+
             </div>
             <div class="col-md-4">
                 <div class="input-box button">
@@ -105,28 +96,26 @@
 </form>
 </div>
 </center>
-
 <?php
-// Database connection
- include "dbname.php";
-
+include "dbname.php";
 if (isset($_POST['add'])) 
 {
-    
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
-    $des=$_POST['des'];
     
     // File upload
     $target_dir = "images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $target_file1 =$target_dir . basename($_FILES["image1"]["name1"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file && $_FILES["image1"]["tmp_name1"], $target_file1)) 
     {
         $image = $target_file;
+        $img1  = $target_file1;
         // Insert data into the database
+
         $sql = "INSERT INTO phone (name, model, price , des , img) VALUES ('$name', '$model', $price ,  '$des' , '$image')";     
         if (mysqli_query($conn, $sql)) 
         {
@@ -206,14 +195,13 @@ if (isset($_POST['add']))
         $image3 = $target_file;
         // Insert data into the database
         $sql = "INSERT INTO phone (name, model, price , des , img,img1,img2,img3) VALUES ('$name', '$model', $price ,  '$des' , '$image','$image1' , '$image2' , '$image3')";     
+
         if (mysqli_query($conn, $sql)) 
         {
-
             echo '<br><br><div class="alert alert-success alert-dismissible">'.
             '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
             'Product Inserted Successfully...'.
           '</div>';
-            
         } 
         else 
         {
@@ -222,16 +210,10 @@ if (isset($_POST['add']))
     } 
     else 
     {
-        echo '<br><br><div class="alert alert-danger alert-dismissible">'.
-        '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-        'Error uploading the Image...'.
-      '</div>';
+        echo "Error uploading the image.";
     }
 }
-<<<<<<< HEAD
 
-
-=======
 //Update 
 
 //include "conn.php";
@@ -315,7 +297,7 @@ if (isset($_POST['add']))
         }
     }
  }
->>>>>>> 1c07b3b4d7c8f21e92c9f99580aa0d4d0d7c0547
+
 
 mysqli_close($conn);
 ?>
