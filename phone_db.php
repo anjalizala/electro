@@ -88,9 +88,11 @@
                   mysqli_close($conn);
          
          ?>
-		 										
-										</div>
-											<div id="slick-nav-1" class="products-slick-nav"></div>
+
+
+									</div>
+										<div id="slick-nav-1" class="products-slick-nav"></div>
+
 								</div>
 								<!-- /tab -->
 							</div>
