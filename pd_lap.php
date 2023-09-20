@@ -1,13 +1,10 @@
 <?php session_start();?>
 <?php include "header.php";
-
-
 if(isset($_GET['id']))
 {
 	echo $_GET['id'];
 
 }
-
 ?>
 
 
@@ -19,13 +16,13 @@ if(isset($_GET['id']))
 				<div class="row">							
 						
 					<!-- Product main img -->
-				   <div class="col-md-5 col-md-push-2">
+				   <!-- <div class="col-md-5 col-md-push-2">
 						 <div id="product-main-img">
-							<!-- <div class="product-preview">
+							<div class="product-preview">
 								<img src="<?php //echo $image;?>" alt="">
-							</div> -->
+							</div>
 						</div>
-					</div>   
+					</div>    -->
 					<!-- /Product main img -->
 
 					
@@ -33,8 +30,8 @@ if(isset($_GET['id']))
             include "dbname.php";
             //Display all the laptop that are active
             //Sql Query
-            $sql = "SELECT * FROM  phone where p_id=".$_GET['id'];
-		  
+            //$sql = "SELECT * FROM  laptop";
+			$sql = "SELECT * FROM  laptop where lp_id=".$_GET['id'];
 
             //Execute the Query
             $res = mysqli_query($conn, $sql);
@@ -45,9 +42,8 @@ if(isset($_GET['id']))
              if($count>0)
              {
                  //CAtegories Available
-                while($row=mysqli_fetch_assoc($res))
-				{
-				
+                 while($row=mysqli_fetch_assoc($res))
+                 {
 
                    
                     // $id = $row['p_id'];
@@ -55,9 +51,6 @@ if(isset($_GET['id']))
                      $model = $row['model']; 
                      $price = $row['price'];
                      $image = $row['img'];
-					 $image1 = $row['img1'];
-					 $image2 = $row['img2'];
-					 $image3 = $row['img3'];
 					 $des = $row['des'];
 					 
 				// if(mysqli_num_rows($res) == 1)
@@ -82,39 +75,26 @@ if(isset($_GET['id']))
 							<div class="product-preview">
 								<img src="<?php echo $image;?>" alt="">
 							</div>
-							<!-- <div class="product-preview">
-								<img src="<?php //echo $image1;?>" alt="">
-							</div>
-							<div class="product-preview">
-								<img src="<?php //echo $image2;?>" alt="">
-							</div>
-							<div class="product-preview">
-								<img src="<?php //echo $image3;?>" alt="">
-							</div> -->
 						</div>
 					</div> 
 					<!-- /Product main img -->
 					
-					<!-- Product thumb imgs-->
-					 <div class="col-md-2  col-md-pull-5">
+					<!-- Product thumb imgs -->
+					<div class="col-md-2  col-md-pull-5">
 						<div id="product-imgs">
-							<!-- <div class="product-preview">
-								<img src="<?php //echo $image;?>" alt="">
-							</div> -->
 							<div class="product-preview">
-								<img src="<?php echo $image1;?>" alt="">
+								<img src="<?php echo $image;?>" alt="">
+							</div>
+							<div class="product-preview">
+								<img src="<?php echo $image;?>" alt="">
 							</div>
 
 							<div class="product-preview">
-								<img src="<?php echo $image2;?>" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="<?php echo $image3;?>" alt="">
+								<img src="<?php echo $image;?>" alt="">
 							</div>
 							
 						</div>
-					</div> 
+					</div>
 					<!-- Product thumb imgs --> 
 
 					<!--Product details-->
@@ -175,7 +155,6 @@ if(isset($_GET['id']))
                  <?php  
                 }
 			}
-			 
            // }
               //CAtegories Not Available
                 else {
