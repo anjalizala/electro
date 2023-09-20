@@ -19,7 +19,7 @@
 									<div class="products-slick" data-nav="#slick-nav-1">
 										<!-- product -->
 										<div class="product">
-										<a href="phone.php">
+										<a href="phone_db.php">
 											<div class="product-img">
 												<img src="./img/iphone.jpg" alt="">
 												<div class="product-label">

@@ -34,7 +34,7 @@
                    // echo "  Name: " . $row["name"]. " " . $row["model"]. " " . $row["price"]. "<br>";
                      //Get the Values
                    
-                    // $id = $row['p_id'];
+                     $id = $row['lp_id'];
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
@@ -45,13 +45,15 @@
                      <!-- product body -->
                      <div class="product">
                      <span><?php //echo $id?></span> 
+					 						<a href="pd_lap.php">
+											<a href="pd_lap.php?id=<?php echo $id;?>">
 											<div class="product-img">
 												<img src="<?php echo $img ?>" alt="">
 												<div class="product-label">
-													<!--<span class="sale">-30%</span>-->
 													<span class="new">NEW</span>
 												</div>
 											</div>
+				 							</a>
 											<div class="product-body">
 												<p class="product-category"><?php echo $name ?></p>
 												<h3 class="product-name"><a href="#"><?php echo $model ?></a></h3>

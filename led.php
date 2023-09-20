@@ -34,24 +34,27 @@
                    // echo "  Name: " . $row["name"]. " " . $row["model"]. " " . $row["price"]. "<br>";
                      //Get the Values
                    
-                    // $id = $row['p_id'];
+                     $id = $row['l_id'];
                      $name = $row['name']; 
                      $model = $row['model']; 
                      $price = $row['price'];
-                    $img = $row['img']                  
+					 $image = $row['img'];  
+                   // $img = $row['img']                  
                      ?>
                       
                       
                      <!-- product body -->
                      <div class="product">
                      <span><?php //echo $id?></span> 
+					 						<a href="pd_led.php">
+											<a href="pd_led.php?id=<?php echo $id;?>">
 											<div class="product-img">
-												<img src="<?php echo $img;?>" alt="">
+												<img src="<?php echo $image;?>" alt="">
 												<div class="product-label">
-													<!--<span class="sale">-30%</span>-->
-													<span class="new">NEW</span>
+												<span class="new">NEW</span>
 												</div>
 											</div>
+				 							</a>
 											<div class="product-body">
 												<p class="product-category"><?php echo $name ?></p>
 												<h3 class="product-name"><a href="#"><?php echo $model ?></a></h3>
@@ -63,11 +66,11 @@
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 												</div>
-												<div class="product-btns">
+												<!--<div class="product-btns">-->
 													<!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
+													<!--<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>-->
 											</div>
 											<div class="add-to-cart">
 												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>

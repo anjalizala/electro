@@ -27,14 +27,14 @@
 					<!-- shop -->
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
-						<a href="laptop.php">
+						<a href="lap.php">
 							<div class="shop-img">
 							<img src="./img/shop01.png" alt=""></img>
 							</div>
 						</a>
 							<div class="shop-body">
-								<a href="laptop.php"><h3>Laptop<br>Collection</h3></a>
-								<a href="laptop.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="lap.php"><h3>Laptop<br>Collection</h3></a>
+								<a href="lap.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -43,14 +43,14 @@
 					<!-- shop -->
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
-						<a href="phone.php">
+						<a href="phone_db.php">
 							<div class="shop-img">
 						 	<img src="./img/iphone.jpg" alt="">
 							</div>
 						</a>
 							<div class="shop-body">
-							<a href="phone.php"><h3>Smartphone<br>Collection</h3></a>
-								<a href="phone.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="phone_db.php"><h3>Smartphone<br>Collection</h3></a>
+								<a href="phone_db.php" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -91,8 +91,8 @@
 							<h3 class="title">New Products</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a href="laptop.php">Laptops</a></li>
-									<li><a  href="phone.php">Smartphones</a></li>
+									<li class="active"><a href="lap.php">Laptops</a></li>
+									<li><a  href="phone_db.php">Smartphones</a></li>
 									<li><a  href="led.php">LED</a></li>
 								</ul>
 							</div>

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php include "header.php"; ?>
 
  <!-- Add laptop Form Starts -->
@@ -42,7 +43,23 @@
             </div>
 
             <div class="input-box">
+<<<<<<< HEAD
+                <input type="text" name="model" placeholder="Model" required>
+            </div>    
+            <div class="input-box">
+                <input type="number" name="price" placeholder="Price" required>
+            </div>
+            <label for="input-box">Description</label>
+            <textarea id="desc" name="des" rows="4" cols="50">
+            </textarea>
+            <div class="input-box">
+                <input type="file" name="image" placeholder="Image" required>
+            </div>
+            <div class="input-box button">
+                <input type="Submit" name="submit" value="ADD">
+=======
                 <input type="text"  name="name" placeholder="Name" >
+>>>>>>> 1c07b3b4d7c8f21e92c9f99580aa0d4d0d7c0547
             </div>
            
             <div class="input-box">
@@ -86,17 +103,16 @@ if (isset($_POST['add']))
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
-    
-    // File upload
+    $des=$_POST['des'];
+    //File upload
     $target_dir = "images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
     {
         $image = $target_file;
         // Insert data into the database
-        $sql = "INSERT INTO led (name, model, price , img) VALUES ('$name', '$model', $price , '$image')";
+        $sql = "INSERT INTO led (name, model, price , des , img) VALUES ('$name', '$model', $price , '$des' , '$image')";
         
         if (mysqli_query($conn, $sql)) 
         {
@@ -114,6 +130,9 @@ if (isset($_POST['add']))
     {
         echo "Error uploading the image.";
     }
+<<<<<<< HEAD
+ }
+=======
 }
 //update
 if(isset($_POST['edit']))
@@ -195,6 +214,7 @@ if(isset($_POST['delete']))
        }
    }
 }
+>>>>>>> 1c07b3b4d7c8f21e92c9f99580aa0d4d0d7c0547
 mysqli_close($conn);
 ?>
 

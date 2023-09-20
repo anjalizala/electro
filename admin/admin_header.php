@@ -1,6 +1,3 @@
-
-<?php session_start() ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,155 +57,121 @@
 			<!-- /TOP HEADER -->
 
 			<!-- MAIN HEADER -->
-			<div id="header">
+			<!-- <div id="header">
 				<!-- container -->
-				<div class="container">
+				<!-- <div class="container">
 					<!-- row -->
-					<div class="row">
+					<!-- <div class="row">
 						<!-- LOGO -->
-						<div class="col-md-3">
+						<!--<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
-						</div>
+						</div> --> --> -->
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-5">
+						<!--<div class="col-md-5">
 							<div class="header-search">
 								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">LAPTOP</option>
-										<option value="1">SMARTPHONE</option>
-                                        <option value="1">LED</option>
-									</select>
+									
 									<input class="input" placeholder="Search here">
 									<button class="search-btn">Search</button>
 								</form>
 							</div>
-						</div>
+						</div>-->
 						<!-- /SEARCH BAR -->
-						<div class="col-md-2">
-							<div class="input-box button">
-							<?php if( isset($_SESSION['name']) && !empty($_SESSION['name']) )
-								{
-							?>
-
-      							<a href="logout.php"><input type="Submit" value="Sign Out" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
-
-							<?php }
-								else	
-								{ ?>
-     							<a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a>
-						    <?php   } ?>
-                				<!-- <a href="register.php"><input type="Submit" value="Sign In" style="width:100px; height:35px; border-radius:15px; margin-top:20px; font-size:15px;"></a> -->
-            				</div>
-						</div>
-						
-						<?php
-                				if(isset($_SESSION["name"]))
-								{
-                    				$name_login = $_SESSION["name"];
-                    				$lg="Log Out";
-                				}
-                				else
-								{
-                    				$name_login = "Guest";
-                    				$lg="Log In";
-                				}
-            
-							?>
+						<!--<div class="row">
 							<div class="col-md-2">
-										<li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $name_login; ?> </a></li>
-							</div>
-														
+					
+							
+						</div>-->
 						<!-- ACCOUNT -->
-						<div class="col-md-2">
+						<!--<div class="col-md-2">
 							<div class="header-ctn">
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="qty">3</div>
+								<!-- Wishlist -->
+								<!--<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Your Wishlist</span>
+										<div class="qty">2</div>
 									</a>
-								</div>
+								</div>-->
+								<!-- /Wishlist -->-->
+
+								<!-- Cart -->
+								<!--<div class="dropdown">
+									
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+												
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+													
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product02.png" alt="">
+													
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+													
 												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
+												
 											</div>
 										</div>
 										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
+											
 										</div>
 										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										
 										</div>
 									</div>
 								</div>
 								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
-
-								<!-- /Menu Toogle -->
-							</div>
+								
+							<!--</div>
 						</div>
 						<!-- /ACCOUNT -->
-					</div>
+					<!--</div>
 					<!-- row -->
-				</div>
+				<!--</div>
 				<!-- container -->
-			</div>
+			<!--</div>
 			<!-- /MAIN HEADER -->
 		</header>
 		<!-- /HEADER -->
 
 		<!-- NAVIGATION -->
-		<nav id="navigation">
+		<!--<nav id="navigation">
 			<!-- container -->
-			<div class="container">
+			<!--<div class="container">
 				<!-- responsive-nav -->
-				<div id="responsive-nav">
+				<!--<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="categories.php">Categories</a></li>
-						<li><a href="lap.php">Laptops</a></li>
-						<li><a href="phone_db.php">Smartphones</a></li>
-						<li><a href="led.php">LED</a></li>
+						<li class="active"><a href="dashbord.php">Home</a></li>
+						<!--<li><a href="categories.php">Categories</a></li>-->
+						<li><a href="add_laptop.php">Laptops</a></li>
+						<li><a href="add_phone.php">Smartphones</a></li>
+						<li><a href="add_led.php">LED</a></li>
 						
-						<li><div class="dropdown">
 						
-		                </div>
+		                <!--</div>-->
 					</ul>
 					<!-- /NAV -->
-				</div>
+				<!--</div>
 				<!-- /responsive-nav -->
-			</div>
+			<!--</div>
 			<!-- /container -->
-		</nav>
+		<!--</nav>
 </body>
 </html>
