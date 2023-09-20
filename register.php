@@ -91,6 +91,7 @@ else
         <h2>Registration</h2>
         <form action="<?php //echo $_SERVER['PHP_SELF'];?>" align="center" method="POST">
         <table>
+        
             <div class="input-box">
                 <input type="text"  name="name" placeholder="Full Name" required>
             </div>

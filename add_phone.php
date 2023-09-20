@@ -89,15 +89,13 @@ if (isset($_POST['add']))
     // File upload
     $target_dir = "images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    $target_file1 =$target_dir . basename($_FILES["image1"]["name1"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file && $_FILES["image1"]["tmp_name1"], $target_file1)) 
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file )) 
     {
         $image = $target_file;
-        $img1  = $target_file1;
         // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , img , img1) VALUES ('$name', '$model', $price , '$image', '$img1')";
+        $sql = "INSERT INTO phone (name, model, price , img ) VALUES ('$name', '$model', $price , '$image')";
         
         if (mysqli_query($conn, $sql)) 
         {
