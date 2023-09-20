@@ -34,7 +34,9 @@
         <h2>Add Laptop</h2>
         
 
+
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
+
  <table>
             <div class="input-box">
                 <input type="text"  name="id" placeholder="id">
@@ -54,8 +56,13 @@
             <div class="input-box">
                 <input type="number" name="price" placeholder="Price" >
             </div>
+            <label for="input-box">Description</label>
+            <textarea id="desc" name="des" rows="4" cols="50">
+            </textarea>
             <div class="input-box">
-                <input type="file" name="image" accept="image/*" placeholder="Image" >
+
+                <input type="file" name="img" placeholder="Image" required>
+
             </div>
             <div class="input-box">
                 <input type="file" name="image1" accept="image/*" placeholder="Image" >
@@ -205,6 +212,7 @@ if(isset($_POST['delete']))
 }
 
 mysqli_close($conn);
+
 
 ?>
 
