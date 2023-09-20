@@ -52,19 +52,19 @@
 
             <div class="input-box">
 
-                <input type="file" name="image" placeholder=" Main Image" required>
+                <input type="file" name="image" placeholder=" Main Image" >
             </div>
             <div class="input-box">
-                <input type="file" name="image1" placeholder="Image_1" required>
+                <input type="file" name="image1" placeholder="Image_1" >
             </div>
             <div class="input-box">
-                <input type="file" name="image2" placeholder="Image_2" required>
+                <input type="file" name="image2" placeholder="Image_2" >
             </div>
             <div class="input-box">
-                <input type="file" name="image3" placeholder="Image_3" required>
+                <input type="file" name="image3" placeholder="Image_3" >
             </div>  
-            <!-- <div class="input-box">
-                <input type="text" name="desc" placeholder="Description" required>
+            <div class="input-box">
+                <input type="text" name="desc" placeholder="Description" >
             </div>
             <!--<div class="input-box">-->
           
@@ -103,6 +103,7 @@ if (isset($_POST['add']))
     $name=$_POST['name'];
 	$model=$_POST['model'];
     $price=$_POST['price'];
+    $des=$_POST['desc'];
     
     // File upload
     $target_dir = "images/";
@@ -112,23 +113,6 @@ if (isset($_POST['add']))
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file )) 
     {
         $image = $target_file;
-        // Insert data into the database
-
-
-        $sql = "INSERT INTO phone (name, model, price , des , img) VALUES ('$name', '$model', $price ,  '$des' , '$image')";     
-        if (mysqli_query($conn, $sql)) 
-        {
-
-            echo '<br><br><div class="alert alert-success alert-dismissible">'.
-            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-            'Product Inserted Successfully...'.
-          '</div>';
-            
-        } 
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
     } 
     else 
     {
@@ -140,21 +124,6 @@ if (isset($_POST['add']))
     if (move_uploaded_file($_FILES["image1"]["tmp_name"], $target_file)) 
     {
         $image1 = $target_file;
-        // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , des , img,img1) VALUES ('$name', '$model', $price ,  '$des' , '$image','$image1')";     
-        if (mysqli_query($conn, $sql)) 
-        {
-
-            echo '<br><br><div class="alert alert-success alert-dismissible">'.
-            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-            'Product Inserted Successfully...'.
-          '</div>';
-            
-        } 
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
     } 
     else 
     {
@@ -166,8 +135,18 @@ if (isset($_POST['add']))
     if (move_uploaded_file($_FILES["image2"]["tmp_name"], $target_file)) 
     {
         $image2 = $target_file;
+    } 
+    else 
+    {
+        echo "Error uploading the image.";
+    }
+
+    $target_file = $target_dir . basename($_FILES["image3"]["name"]);
+    if (move_uploaded_file($_FILES["image3"]["tmp_name"], $target_file)) 
+    {
+        $image3 = $target_file;
         // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , des , img,img1,img2) VALUES ('$name', '$model', $price ,  '$des' , '$image','$image1' , '$image2')";     
+        $sql = "INSERT INTO phone (name, model, price , des , img,img1,img2,img3) VALUES ('$name', '$model', $price ,  '$des' , '$image','$image1','$image2','$image3')";     
         if (mysqli_query($conn, $sql)) 
         {
 
@@ -186,33 +165,9 @@ if (isset($_POST['add']))
     {
         echo "Error uploading the image.";
     }
-
-    // File upload
-    $target_file = $target_dir . basename($_FILES["image3"]["name"]);
-    if (move_uploaded_file($_FILES["image3"]["tmp_name"], $target_file)) 
-    {
-        $image3 = $target_file;
-        // Insert data into the database
-        $sql = "INSERT INTO phone (name, model, price , des , img,img1,img2,img3) VALUES ('$name', '$model', $price ,  '$des' , '$image','$image1' , '$image2' , '$image3')";     
-
-
-        if (mysqli_query($conn, $sql)) 
-        {
-            echo '<br><br><div class="alert alert-success alert-dismissible">'.
-            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-            'Product Inserted Successfully...'.
-          '</div>';
-        } 
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    } 
-    else 
-    {
-        echo "Error uploading the image.";
-    }
 }
+
+   
 
 //Update 
 

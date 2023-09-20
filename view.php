@@ -1,16 +1,6 @@
 <?php
 // Database connection
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "demo_crud";
-
-$conn = mysqli_connect($host, $user, $password, $database);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
+include "dbname.php";
 // Retrieve employee data
 $sql = "SELECT * FROM employees";
 $result = mysqli_query($conn, $sql);
@@ -21,16 +11,15 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>category</title>
 </head>
 <body>
-    <h1>Employee List</h1>
+    <h1>category</h1>
     <table>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Image</th>
-            <th>Action</th>
+            <th>Phone</th>
+            <th>LED</th>
+            <th>TV</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)): ?>
             <tr>
